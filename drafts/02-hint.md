@@ -1,8 +1,5 @@
 # booking-v3 date hint tells day-first tenants to type month-first
 
-## Final status
-Closed after **#4471** finished without a separate desk ticket for this split-out hint issue. This repo keeps the count and examples as the record.
-
 ## Summary
 Support ticket #4471 contains **33 unique reports** for a second bug that is distinct from the shared parser issue. On `booking-v3`, the form shows `MM/DD/YYYY` to day-first tenants, so people type month-first while the tenant still expects day-first dates.
 
