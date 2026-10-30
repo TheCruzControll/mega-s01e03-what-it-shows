@@ -16,4 +16,4 @@ This repo contains the split of support ticket **#4471** into the two distinct d
 
 - The export contained **427 rows** but only **412 unique report ids**.
 - **15 rows** were duplicate export overlap.
-- This repo records the final split after work on **#4471** was done.
+- This repo records the final split after work on **#4471** was done in the support desk system.
