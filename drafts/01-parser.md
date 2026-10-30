@@ -27,6 +27,9 @@ Support ticket #4471 contains **379 unique reports** for one underlying parser b
 - `pale.harbour` (21)
 - `copper.studio` (19)
 
+## Resolution — fixed
+The engineering update on the Challenge page marks #4471 closed on 05 October. The parser is **fixed**: `fix(dates): parse dd/mm for eu locales`. Close this ticket as completed because engineering fixed this parser bug, not because the reports were split or documented.
+
 ## Notes
 - Intake tags are noisy here: **23** parser reports were tagged `hint`.
 - Desk notes mark **5** of these reports as one-day moves, but their tenant/channel behavior still places them with the parser bug.

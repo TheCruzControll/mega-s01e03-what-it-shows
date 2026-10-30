@@ -20,6 +20,9 @@ Support ticket #4471 contains **33 unique reports** for a second bug that is dis
 - `copper.studio` (11)
 - `pale.harbour` (10)
 
+## Resolution — won't fix
+The engineering update on the Challenge page marks #4471 closed on 05 October. The hint is **won't fix** because the `booking-v3` form was retired. Close this ticket as not planned: the hint bug was not fixed, and the parser fix does not fix it.
+
 ## Notes
 - Intake tags are noisy here too: **15** hint reports were tagged `parser`.
 - This issue is separate from the shared parser bug because it is limited to `booking-v3` form entry, not app/email rendering.
