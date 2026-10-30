@@ -36,16 +36,17 @@
       <a class="crumb" href="/kb">support desk · kb</a>
       <h1>#4471 · split into parser and hint issues</h1>
       <p class="meta">
-        <span>owner <b>Francis Cruz</b></span>
-        <span class="status proposed">proposed</span>
+        <span>owner <b>support desk</b></span>
+        <span class="status known">known</span>
         <span>reviewed 2026-10-30 · 0 days ago</span>
       </p>
     </header>
 
     <main>
-      <p>Ticket #4471 was marked as one known issue, but the export behind it contains <strong>412 unique reports</strong> across <strong>two separate date problems</strong>. The raw export has <strong>427 rows</strong> because <strong>15 duplicate rows</strong> overlap across export pages, so all counts below use unique report ids.</p>
+      <p>This page records the separate date problems that were merged into <strong>#4471</strong>.</p>
 
-      <h2>Split recommendation</h2>
+      <h2>Split in the export</h2>
+      <p>The export has <strong>427</strong> rows for <strong>412</strong> unique reports, so <strong>15</strong> duplicate rows drop out by report id.</p>
       <table>
         <thead>
           <tr><th>problem</th><th>reports</th><th>tenants</th><th>channels</th><th>notes</th></tr>
@@ -63,12 +64,13 @@
             <td>33</td>
             <td>3</td>
             <td>form 33</td>
-            <td><code>booking-v3</code> shows <code>MM/DD/YYYY</code> to day-first tenants, then reads the typed date as day-first.</td>
+            <td><code>booking-v3</code> shows <code>MM/DD/YYYY</code> to day-first tenants.</td>
           </tr>
         </tbody>
       </table>
+      <p class="note">5 parser reports were read as one-day moves, but the tenant and channel still place them with the parser bug.</p>
 
-      <h2>What the merged ticket contains</h2>
+      <h2>What was merged</h2>
       <p class="sum"><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p>
       <table>
         <thead>
@@ -95,17 +97,16 @@
       </table>
       <p class="note">5 reports read as a one-day move; filed under <code>parser</code> by tenant.</p>
 
-      <h2>Tickets to file</h2>
+      <h2>GitHub tickets filed</h2>
       <ol>
-        <li><strong>Date parser reads day-first tenant dates as month-first</strong> — covers <strong>379 reports</strong> across <strong>11 tenants</strong>, first seen <strong>2026-04-01</strong> and still reported on <strong>2026-10-04</strong>.</li>
-        <li><strong>booking-v3 date hint tells day-first tenants to type month-first</strong> — covers <strong>33 reports</strong> across <strong>3 tenants</strong>, first seen <strong>2026-04-17</strong> and last seen <strong>2026-09-22</strong>.</li>
+        <li><strong>Date parser reads day-first tenant dates as month-first</strong> — filed in the public repo with how many reports this parser issue covers.</li>
+        <li><strong>booking-v3 date hint tells day-first tenants to type month-first</strong> — filed in the public repo with how many reports this hint issue covers.</li>
       </ol>
 
       <h2>Notes</h2>
       <ul>
-        <li>Intake tags do not split this cleanly: <strong>23</strong> parser reports were tagged <code>hint</code>, and <strong>15</strong> hint reports were tagged <code>parser</code>.</li>
-        <li>Desk notes mark <strong>5</strong> parser reports as one-day moves, but their tenant and channel still place them with the parser bug.</li>
-        <li>The current page at <code>/kb/incidents/4471</code> says the queue holds one fix. The export data shows two issues that should be tracked separately.</li>
+        <li>The parser issue is the owner of <code>#4471</code>; the hint issue was merged into the wrong ticket and had no desk ticket of its own.</li>
+        <li>Intake tags do not split the reports cleanly, so the tenant and channel decide the cause.</li>
       </ul>
 
       <p class="stamp">desk ref <b>DR-G805-0SV3</b></p>
