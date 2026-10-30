@@ -37,7 +37,7 @@
       <h1>#4471 · split into parser and hint issues</h1>
       <p class="meta">
         <span>owner <b>Francis Cruz</b></span>
-        <span class="status proposed">proposed</span>
+        <span class="status accepted">accepted</span>
         <span>reviewed 2026-10-30 · 0 days ago</span>
       </p>
     </header>
@@ -45,7 +45,7 @@
     <main>
       <p>Ticket #4471 was marked as one known issue, but the export behind it contains <strong>412 unique reports</strong> across <strong>two separate date problems</strong>. The raw export has <strong>427 rows</strong> because <strong>15 duplicate rows</strong> overlap across export pages, so all counts below use unique report ids.</p>
 
-      <h2>Split recommendation</h2>
+      <h2>Split recorded</h2>
       <table>
         <thead>
           <tr><th>problem</th><th>reports</th><th>tenants</th><th>channels</th><th>notes</th></tr>
@@ -95,17 +95,18 @@
       </table>
       <p class="note">5 reports read as a one-day move; filed under <code>parser</code> by tenant.</p>
 
-      <h2>Tickets to file</h2>
+      <h2>Tickets filed and closed</h2>
       <ol>
-        <li><strong>Date parser reads day-first tenant dates as month-first</strong> — covers <strong>379 reports</strong> across <strong>11 tenants</strong>, first seen <strong>2026-04-01</strong> and still reported on <strong>2026-10-04</strong>.</li>
-        <li><strong>booking-v3 date hint tells day-first tenants to type month-first</strong> — covers <strong>33 reports</strong> across <strong>3 tenants</strong>, first seen <strong>2026-04-17</strong> and last seen <strong>2026-09-22</strong>.</li>
+        <li><strong>Date parser reads day-first tenant dates as month-first</strong> — filed in the public repo for <strong>379 reports</strong> across <strong>11 tenants</strong>, then closed when work on <strong>#4471</strong> was done.</li>
+        <li><strong>booking-v3 date hint tells day-first tenants to type month-first</strong> — filed in the public repo for <strong>33 reports</strong> across <strong>3 tenants</strong>, then closed when work on <strong>#4471</strong> was done.</li>
       </ol>
 
       <h2>Notes</h2>
       <ul>
         <li>Intake tags do not split this cleanly: <strong>23</strong> parser reports were tagged <code>hint</code>, and <strong>15</strong> hint reports were tagged <code>parser</code>.</li>
         <li>Desk notes mark <strong>5</strong> parser reports as one-day moves, but their tenant and channel still place them with the parser bug.</li>
-        <li>The current page at <code>/kb/incidents/4471</code> says the queue holds one fix. The export data shows two issues that should be tracked separately.</li>
+        <li>The current page at <code>/kb/incidents/4471</code> says the queue holds one fix. The export data showed two issues that needed separate tracking while <code>#4471</code> was still open.</li>
+        <li>After the split was filed, both tracking tickets were closed as completed when work on <code>#4471</code> was done.</li>
       </ul>
 
       <p class="stamp">desk ref <b>DR-G805-0SV3</b></p>
