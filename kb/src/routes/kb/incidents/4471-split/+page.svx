@@ -4,7 +4,7 @@ title: '#4471 · split into parser and hint issues'
 owner: support desk
 status: known
 reviewed: 2026-10-30
-signature: Francis Cruz
+signature: v1.eyJzdWIiOiI1OTc2IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMzMzU3MDUsImV4cCI6MTc5MzQyMjEwNX0.Nu0Ctv2_1I7wXda8CYIChKth_DPO_qcRGyLXkTjRhtY
 ---
 
 <script>
