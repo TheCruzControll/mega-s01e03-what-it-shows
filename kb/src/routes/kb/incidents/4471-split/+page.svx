@@ -1,0 +1,39 @@
+---
+layout: runbook
+title: '#4471 · split into parser and hint issues'
+owner: Francis Cruz
+status: proposed
+reviewed: 2026-10-30
+signature: Francis Cruz
+---
+
+<script>
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+Ticket #4471 was marked as one known issue, but the export behind it contains **412 unique reports** across **two separate date problems**. The raw export has **427 rows** because **15 duplicate rows** overlap across export pages, so all counts below use unique report ids.
+
+## Split recommendation
+
+| problem | reports | tenants | channels | notes |
+| --- | ---: | ---: | --- | --- |
+| `parser` | 379 | 11 | app 204 · email 150 · form 25 | Shared parser reads day-first tenant dates month first. |
+| `hint` | 33 | 3 | form 33 | `booking-v3` shows `MM/DD/YYYY` to day-first tenants, then reads the typed date as day-first. |
+
+## What the merged ticket contains
+
+<CauseTable ticket={4471} />
+
+## Tickets to file
+
+1. **Date parser reads day-first tenant dates as month-first** — covers **379 reports** across **11 tenants**, first seen **2026-04-01** and still reported on **2026-10-04**.
+2. **booking-v3 date hint tells day-first tenants to type month-first** — covers **33 reports** across **3 tenants**, first seen **2026-04-17** and last seen **2026-09-22**.
+
+## Notes
+
+- Intake tags do not split this cleanly: **23** parser reports were tagged `hint`, and **15** hint reports were tagged `parser`.
+- Desk notes mark **5** parser reports as one-day moves, but their tenant and channel still place them with the parser bug.
+- The current page at `/kb/incidents/4471` says the queue holds one fix. The export data shows two issues that should be tracked separately.
+
+<RenderStamp {signature} />

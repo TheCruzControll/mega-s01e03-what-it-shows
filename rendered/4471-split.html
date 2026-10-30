@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>#4471 · split into parser and hint issues · support kb</title>
+  <style>
+    :root {
+      --bg: #fbfaf7; --fg: #1d1d1b; --muted: #6b6a66; --line: #e3e0d8;
+      --accent: #2f6f5e; --warn: #b4501f; --warn-bg: #fbeee6; --note-bg: #eef5f2;
+      --mono: ui-monospace, 'Cascadia Code', Menlo, monospace;
+    }
+    body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, sans-serif; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.92rem; }
+    th, td { border-bottom: 1px solid var(--line); padding: 0.35rem 0.5rem; text-align: left; vertical-align: top; }
+    code { font-family: var(--mono); font-size: 0.88em; }
+    a { color: var(--accent); }
+    .kb { max-width: 760px; margin: 0 auto; padding: 2rem 16px 4rem; }
+    .crumb { font: 0.8rem var(--mono); text-decoration: none; color: var(--muted); }
+    h1 { margin: 0.25rem 0 0.5rem; line-height: 1.2; }
+    .meta { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; color: var(--muted); font-size: 0.85rem; margin: 0; }
+    .status { border: 1px solid var(--line); border-radius: 99px; padding: 0 0.6rem; }
+    footer { margin-top: 3rem; color: var(--muted); font-size: 0.8rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+    .sum { font-size: 1.1rem; }
+    .tags { color: var(--muted); font-size: 0.85em; }
+    .note { color: var(--muted); font-size: 0.85em; }
+    .wrong td { background: var(--warn-bg); }
+    .wrong td:last-child { color: var(--warn); font-weight: 600; }
+    .stamp { margin: 2rem 0 0; font: 0.85rem var(--mono); color: var(--muted); }
+    .stamp b { color: var(--accent); letter-spacing: 0.04em; }
+  </style>
+</head>
+<body>
+  <div class="kb">
+    <header>
+      <a class="crumb" href="/kb">support desk · kb</a>
+      <h1>#4471 · split into parser and hint issues</h1>
+      <p class="meta">
+        <span>owner <b>Francis Cruz</b></span>
+        <span class="status proposed">proposed</span>
+        <span>reviewed 2026-10-30 · 0 days ago</span>
+      </p>
+    </header>
+
+    <main>
+      <p>Ticket #4471 was marked as one known issue, but the export behind it contains <strong>412 unique reports</strong> across <strong>two separate date problems</strong>. The raw export has <strong>427 rows</strong> because <strong>15 duplicate rows</strong> overlap across export pages, so all counts below use unique report ids.</p>
+
+      <h2>Split recommendation</h2>
+      <table>
+        <thead>
+          <tr><th>problem</th><th>reports</th><th>tenants</th><th>channels</th><th>notes</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>parser</code></td>
+            <td>379</td>
+            <td>11</td>
+            <td>app 204 · email 150 · form 25</td>
+            <td>Shared parser reads day-first tenant dates month first.</td>
+          </tr>
+          <tr>
+            <td><code>hint</code></td>
+            <td>33</td>
+            <td>3</td>
+            <td>form 33</td>
+            <td><code>booking-v3</code> shows <code>MM/DD/YYYY</code> to day-first tenants, then reads the typed date as day-first.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>What the merged ticket contains</h2>
+      <p class="sum"><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p>
+      <table>
+        <thead>
+          <tr><th>cause</th><th>reports</th><th>tagged as</th><th>tenants</th><th>seen</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>parser</code></td>
+            <td>379</td>
+            <td class="tags">parser ×356 · hint ×23</td>
+            <td>11</td>
+            <td>2026-04-01 → 2026-10-04</td>
+            <td>#4471</td>
+          </tr>
+          <tr class="wrong">
+            <td><code>hint</code></td>
+            <td>33</td>
+            <td class="tags">hint ×18 · parser ×15</td>
+            <td>3</td>
+            <td>2026-04-17 → 2026-09-22</td>
+            <td>not this ticket — no ticket of its own</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">5 reports read as a one-day move; filed under <code>parser</code> by tenant.</p>
+
+      <h2>Tickets to file</h2>
+      <ol>
+        <li><strong>Date parser reads day-first tenant dates as month-first</strong> — covers <strong>379 reports</strong> across <strong>11 tenants</strong>, first seen <strong>2026-04-01</strong> and still reported on <strong>2026-10-04</strong>.</li>
+        <li><strong>booking-v3 date hint tells day-first tenants to type month-first</strong> — covers <strong>33 reports</strong> across <strong>3 tenants</strong>, first seen <strong>2026-04-17</strong> and last seen <strong>2026-09-22</strong>.</li>
+      </ol>
+
+      <h2>Notes</h2>
+      <ul>
+        <li>Intake tags do not split this cleanly: <strong>23</strong> parser reports were tagged <code>hint</code>, and <strong>15</strong> hint reports were tagged <code>parser</code>.</li>
+        <li>Desk notes mark <strong>5</strong> parser reports as one-day moves, but their tenant and channel still place them with the parser bug.</li>
+        <li>The current page at <code>/kb/incidents/4471</code> says the queue holds one fix. The export data shows two issues that should be tracked separately.</li>
+      </ul>
+
+      <p class="stamp">desk ref <b>DR-G805-0SV3</b></p>
+    </main>
+
+    <footer>Pages are written by people. Tables and charts are built from data at render time.</footer>
+  </div>
+</body>
+</html>

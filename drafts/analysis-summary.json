@@ -1,0 +1,46 @@
+{
+  "sourceRows": 427,
+  "uniqueMergedReports": 412,
+  "duplicateRowsRemoved": 15,
+  "problems": {
+    "parser": {
+      "count": 379,
+      "firstSeen": "2026-04-01",
+      "lastSeen": "2026-10-04",
+      "tenantCount": 11,
+      "channels": {
+        "app": 204,
+        "email": 150,
+        "form": 25
+      },
+      "intakeTags": {
+        "parser": 356,
+        "hint": 23
+      },
+      "oneDayMoveCount": 5,
+      "sampleReports": [
+        "R-41200",
+        "R-41202",
+        "R-41203"
+      ]
+    },
+    "hint": {
+      "count": 33,
+      "firstSeen": "2026-04-17",
+      "lastSeen": "2026-09-22",
+      "tenantCount": 3,
+      "channels": {
+        "form": 33
+      },
+      "intakeTags": {
+        "hint": 18,
+        "parser": 15
+      },
+      "sampleReports": [
+        "R-41230",
+        "R-41241",
+        "R-41251"
+      ]
+    }
+  }
+}
