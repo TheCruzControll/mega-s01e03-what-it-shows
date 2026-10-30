@@ -1,5 +1,8 @@
 # Date parser reads day-first tenant dates as month-first
 
+## Final status
+Closed after work on **#4471** was done. This parser split was the desk ticket that #4471 actually covered.
+
 ## Summary
 Support ticket #4471 contains **379 unique reports** for one underlying parser bug. The shared parser reads dates month-first even for day-first tenants, so bookings like `7 April` become `4 July`.
 
