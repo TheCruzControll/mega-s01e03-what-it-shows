@@ -97,8 +97,8 @@
 
       <h2>Tickets filed and closed</h2>
       <ol>
-        <li><strong>Date parser reads day-first tenant dates as month-first</strong> — filed in the public repo for <strong>379 reports</strong> across <strong>11 tenants</strong>, then closed when work on <strong>#4471</strong> was done in the desk's own system.</li>
-        <li><strong>booking-v3 date hint tells day-first tenants to type month-first</strong> — filed in the public repo for <strong>33 reports</strong> across <strong>3 tenants</strong>, then closed when work on <strong>#4471</strong> was done in the desk's own system.</li>
+        <li><strong>Date parser reads day-first tenant dates as month-first</strong> — filed in the public repo for <strong>379 reports</strong> across <strong>11 tenants</strong>, then closed as completed when work on <strong>#4471</strong> was done.</li>
+        <li><strong>booking-v3 date hint tells day-first tenants to type month-first</strong> — filed in the public repo for <strong>33 reports</strong> across <strong>3 tenants</strong>, then closed when <strong>#4471</strong> finished without a separate desk ticket for this split-out issue.</li>
       </ol>
 
       <h2>Notes</h2>
@@ -106,7 +106,8 @@
         <li>Intake tags do not split this cleanly: <strong>23</strong> parser reports were tagged <code>hint</code>, and <strong>15</strong> hint reports were tagged <code>parser</code>.</li>
         <li>Desk notes mark <strong>5</strong> parser reports as one-day moves, but their tenant and channel still place them with the parser bug.</li>
         <li>The current page at <code>/kb/incidents/4471</code> says the queue holds one fix. The export data showed two issues that needed separate tracking while <code>#4471</code> was still open.</li>
-        <li>After the split was filed, both tracking tickets were closed when work on <code>#4471</code> was done in the desk's own system, so no further repo work stayed planned on them.</li>
+        <li>After the split was filed, the parser ticket closed as completed because <code>#4471</code> was its desk ticket.</li>
+        <li>The hint ticket closed without further repo work because it never got its own desk ticket before <code>#4471</code> finished.</li>
       </ul>
 
       <p class="stamp">desk ref <b>DR-G805-0SV3</b></p>

@@ -27,14 +27,15 @@ Ticket #4471 was marked as one known issue, but the export behind it contains **
 
 ## Tickets filed and closed
 
-1. **Date parser reads day-first tenant dates as month-first** — filed in the public repo for **379 reports** across **11 tenants**, then closed when work on **#4471** was done in the desk's own system.
-2. **booking-v3 date hint tells day-first tenants to type month-first** — filed in the public repo for **33 reports** across **3 tenants**, then closed when work on **#4471** was done in the desk's own system.
+1. **Date parser reads day-first tenant dates as month-first** — filed in the public repo for **379 reports** across **11 tenants**, then closed as completed when work on **#4471** was done.
+2. **booking-v3 date hint tells day-first tenants to type month-first** — filed in the public repo for **33 reports** across **3 tenants**, then closed when **#4471** finished without a separate desk ticket for this split-out issue.
 
 ## Notes
 
 - Intake tags do not split this cleanly: **23** parser reports were tagged `hint`, and **15** hint reports were tagged `parser`.
 - Desk notes mark **5** parser reports as one-day moves, but their tenant and channel still place them with the parser bug.
 - The current page at `/kb/incidents/4471` says the queue holds one fix. The export data showed two issues that needed separate tracking while #4471 was still open.
-- After the split was filed, both tracking tickets were closed when work on `#4471` was done in the desk's own system, so no further repo work stayed planned on them.
+- After the split was filed, the parser ticket closed as completed because `#4471` was its desk ticket.
+- The hint ticket closed without further repo work because it never got its own desk ticket before `#4471` finished.
 
 <RenderStamp {signature} />
